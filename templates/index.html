@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot | Gemini</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>AI Chatbot 🤖</h2>
+            <p>Powered by Gemini</p>
+        </div>
+
+        <div class="chat-box" id="chat-box">
+            <div class="bot-message">
+                <p>Hello 👋! I'm your AI assistant. How can I help you today?</p>
+            </div>
+        </div>
+        <!-- 📂 File Upload -->
+        <div class="upload-container">
+            <div class="upload-section">
+                <label for="file-upload" class="upload-label">
+                    <i class="fas fa-file-upload"></i> Choose File
+                </label>
+                <input type="file" id="file-upload" accept=".pdf,.docx">
+                <button id="upload-btn">📤 Upload </button>
+                <p id="upload-status"></p>
+            </div>
+        
+            <!-- Right side: File preview -->
+            <div class="file-preview" id="file-preview">
+                <h3>📚 Uploaded Knowledge</h3>
+                <div id="uploaded-files"></div>
+            </div>
+        </div>
+
+
+        
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button id="send-btn">Send</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>
